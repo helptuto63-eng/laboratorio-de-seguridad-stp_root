@@ -218,12 +218,12 @@ Inicio
 
 ---
 
-## 7. Capturas de pantalla
+
 
 ### 7.1 STP en S1 antes del ataque
 
 ```
-[CAPTURA 1]
+
 Comando: S1# show spanning-tree vlan 1
 Descripción: S1 es el Root Bridge legítimo. Aparece "This bridge is the root".
 ```
@@ -231,7 +231,7 @@ Descripción: S1 es el Root Bridge legítimo. Aparece "This bridge is the root".
 ### 7.2 Ataque en ejecución — Kali
 
 ```
-[CAPTURA 2]
+
 Comando: sudo python3 06_stp_root_attack.py
 Descripción: BPDUs enviados cada 2 segundos con Root MAC 00:00:00:00:00:01 y prioridad 0.
 ```
@@ -239,7 +239,7 @@ Descripción: BPDUs enviados cada 2 segundos con Root MAC 00:00:00:00:00:01 y pr
 ### 7.3 STP en S1 durante el ataque
 
 ```
-[CAPTURA 3]
+
 Comando: S1# show spanning-tree vlan 1
 Descripción: Root ID muestra Priority 0 y Address 00:00:00:00:00:01. S1 ya no es el Root Bridge.
 ```
@@ -247,7 +247,7 @@ Descripción: Root ID muestra Priority 0 y Address 00:00:00:00:00:01. S1 ya no e
 ### 7.4 STP en S1 con BPDU Guard activo (contramedida)
 
 ```
-[CAPTURA 4]
+
 Comando: S1# show errdisable recovery / show interfaces e0/2 status
 Descripción: Puerto e0/2 en err-disabled. S1 recuperó el Root Bridge.
 ```
